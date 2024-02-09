@@ -2,7 +2,7 @@ from typing import Union
 
 from fastapi import FastAPI
 
-from dishes import users_router
+from users import users_router
 from database import init_db
 from mangum import Mangum
 from contextlib import asynccontextmanager

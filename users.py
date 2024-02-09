@@ -1,7 +1,11 @@
+"""_summary_
+This file consists of all methods to user route
+"""
+
+
+from typing import List, Union
 from fastapi import APIRouter, HTTPException
 from models import User
-from typing import List, Union
-from beanie import PydanticObjectId
 
 users_router = APIRouter()
 
