@@ -55,7 +55,7 @@ menu_data = [
 ]
 
 # Insert menu data into the menu collection
-menu_collection = db["menu"]
+menu_collection = db["menus"]
 menu_ids = menu_collection.insert_many(menu_data).inserted_ids
 
 # Sample data for restaurants
@@ -63,14 +63,14 @@ restaurants_data = [
     {
         "title": "Restaurant A",
         "cusine": "Indian",
-        "rating": random.randint(1, 5),
+        "overall_rating": random.randint(1, 5),
         "menu_id": None,  # We'll update this later
         "service_pincodes": [600001, 600002, 600003],
     },
     {
         "title": "Restaurant B",
         "cusine": "Italian",
-        "rating": random.randint(1, 5),
+        "overall_rating": random.randint(1, 5),
         "menu_id": None,  # We'll update this later
         "service_pincodes": [600004, 600005, 600006],
     },

@@ -4,6 +4,8 @@ from beanie import Document, PydanticObjectId
 from bson import ObjectId
 from pydantic import BaseModel, Field, validator
 
+from schema_model.menus import Menu
+
 
 class Restaurant(Document):
     """
@@ -13,9 +15,10 @@ class Restaurant(Document):
     title: str = Field(max_length=400)
     menu_id: PydanticObjectId
     service_pincodes: list[int]
-    overall_rating: int
+    overall_rating: float
     cusine: str = Field(max_length=400)
     revision_id: Optional[PydanticObjectId] = None
+    menu: Optional[Menu] = None  # Define menu field
 
     @validator("service_pincodes")
     def validate_pincodes(cls, value):
