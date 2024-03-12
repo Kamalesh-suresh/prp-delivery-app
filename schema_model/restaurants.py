@@ -7,6 +7,14 @@ from pydantic import BaseModel, Field, validator
 from schema_model.menus import Menu
 
 
+class RestaurantCreate(BaseModel):
+    title: str
+    cusine: str
+    overall_rating: int
+    menu_id: Optional[str] = None
+    service_pincodes: list[int]
+
+
 class Restaurant(Document):
     """
     This class imports Restaurants_attributes and schema extras
