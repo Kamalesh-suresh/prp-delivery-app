@@ -20,6 +20,7 @@ async def get_all_restaurants(
     sort: str = Query("desc", regex=r"^(asc|desc)$"),
     pincode: Optional[int] = Query(None),
 ):
+    print("try ")
     try:
         skip = (page - 1) * count
 
@@ -71,6 +72,7 @@ async def get_all_restaurants(
 
         total_count = await Restaurant.count()
         restaurants_with_menus = await Restaurant.aggregate(pipeline).to_list()
+        print(restaurants_with_menus)
         return {"total_count": total_count, "restaurants": restaurants_with_menus}
 
     except Exception as e:
